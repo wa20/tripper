@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-// import {
-//   ApolloClient,
-//   InMemoryCache,
-//   ApolloProvider,
-//   createHttpLink,
-// } from '@apollo/client';
-// import { setContext } from '@apollo/client/link/context';
-// import 'semantic-ui-css/semantic.min.css'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './pages/homePage/homePage';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import 'semantic-ui-css/semantic.min.css'
+import Home from '../src/pages/Home/homePage';
+import Nav from '../src/components/Navbar/navbar'
 
 
 
@@ -32,7 +32,10 @@ import Home from './pages/homePage/homePage';
 function App() {
   return (
     // <ApolloProvider client={client}>
+
+    
       <Router>
+        <Nav />
         <div>
           <Switch>
             <Route exact path="/" component={Home} />
