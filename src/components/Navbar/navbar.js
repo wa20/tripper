@@ -13,8 +13,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListSubheader from "@material-ui/core/ListSubheader";
-import Collapse from "@material-ui/core/Collapse";
 import HomeIcon from "@material-ui/icons/Home";
 import clsx from "clsx";
 import StoreIcon from "@material-ui/icons/Store";
@@ -23,13 +21,16 @@ import { Image } from "semantic-ui-react";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import Menu from "@material-ui/core/Menu";
-import CancelIcon from "@material-ui/icons/Cancel";
-
 import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
 import SearchIcon from "@material-ui/icons/Search";
 import DirectionsIcon from "@mui/icons-material/Directions";
+import { Autocomplete } from "@react-google-maps/api";
+
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -134,23 +135,34 @@ export default function NavBar(props) {
       })}
       role="presentation"
     >
-      <Paper
-        component="form"
-        sx={{ p: "2px 4px", display: "flex", alignItems: "center", width: 320 }}
-      >
-        <InputBase
-          sx={{ ml: 1, flex: 1 }}
-          placeholder="Search Google Maps"
-          inputProps={{ "aria-label": "search google maps" }}
-        />
-        <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
-          <SearchIcon />
-        </IconButton>
-        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-        <IconButton color="primary" sx={{ p: "10px" }} aria-label="directions">
-          <DirectionsIcon />
-        </IconButton>
-      </Paper>
+      {/* <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}> */}
+        <Paper
+          component="form"
+          sx={{
+            p: "2px 4px",
+            display: "flex",
+            alignItems: "center",
+            width: 320,
+          }}
+        >
+          <InputBase
+            sx={{ ml: 1, flex: 1 }}
+            placeholder="Search Google Maps"
+            inputProps={{ "aria-label": "search google maps" }}
+          />
+          <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
+            <SearchIcon />
+          </IconButton>
+          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+          <IconButton
+            color="primary"
+            sx={{ p: "10px" }}
+            aria-label="directions"
+          >
+            <DirectionsIcon />
+          </IconButton>
+        </Paper>
+      {/* </Autocomplete> */}
 
       <List>
         <ListItemLink button href="/">
@@ -164,7 +176,7 @@ export default function NavBar(props) {
           <ListItemIcon>
             <StoreIcon />
           </ListItemIcon>
-          <ListItemText primary="Menu Item" />
+          <ListItemText primary="Contact" />
         </ListItemLink>
       </List>
     </div>
@@ -271,40 +283,41 @@ export default function NavBar(props) {
 
                   <div className={classes.grow} />
 
-                  <Paper
-                    component="form"
-                    sx={{
-                      p: "2px 4px",
-                      display: "flex",
-                      alignItems: "center",
-                      width: 500,
-                    }}
-                  >
-                    <InputBase
-                      sx={{ ml: 1, flex: 1 }}
-                      placeholder="Search Google Maps"
-                      inputProps={{ "aria-label": "search google maps" }}
-                    />
-                    <IconButton
-                      type="submit"
-                      sx={{ p: "10px" }}
-                      aria-label="search"
+                  {/* <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}> */}
+                    <Paper
+                      component="form"
+                      sx={{
+                        p: "2px 4px",
+                        display: "flex",
+                        alignItems: "center",
+                        width: 500,
+                      }}
                     >
-                      <SearchIcon />
-                    </IconButton>
-                    <Divider
-                      sx={{ height: 28, m: 0.5 }}
-                      orientation="vertical"
-                    />
-                    <IconButton
-                      color="primary"
-                      sx={{ p: "10px" }}
-                      aria-label="directions"
-                    >
-                      <DirectionsIcon />
-                    </IconButton>
-                  </Paper>
-                  
+                      <InputBase
+                        sx={{ ml: 1, flex: 1 }}
+                        placeholder="Search Google Maps"
+                        inputProps={{ "aria-label": "search google maps" }}
+                      />
+                      <IconButton
+                        type="submit"
+                        sx={{ p: "10px" }}
+                        aria-label="search"
+                      >
+                        <SearchIcon />
+                      </IconButton>
+                      <Divider
+                        sx={{ height: 28, m: 0.5 }}
+                        orientation="vertical"
+                      />
+                      <IconButton
+                        color="primary"
+                        sx={{ p: "10px" }}
+                        aria-label="directions"
+                      >
+                        <DirectionsIcon />
+                      </IconButton>
+                    </Paper>
+                  {/* </Autocomplete> */}
                 </Toolbar>
               </AppBar>
             </div>
