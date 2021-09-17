@@ -9,11 +9,18 @@ import {
   Select,
 } from "@material-ui/core";
 
+
+import InfoCard from "../InfoCard/infoCard"
 import useStyles from "./listStyles";
 
 const List = () => {
   const [type, setType] = useState("hotels");
   const [rating, setRating] = useState('all')
+  const places =  [
+    {},
+    {},
+    {},
+  ]
 
   const classes = useStyles();
 
@@ -40,6 +47,17 @@ const List = () => {
           <MenuItem value="4.5">Rating 4.5+</MenuItem>
         </Select>
       </FormControl>
+
+      <Grid container spacing={3} className={classes.list}>
+
+      {places?.map((place, i) => (
+              <Grid item key={i} item xs={12}>
+                <InfoCard place={place} />
+              </Grid>
+            ))}
+
+
+      </Grid>
 
 
 
