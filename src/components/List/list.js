@@ -17,9 +17,16 @@ const List = () => {
   const [type, setType] = useState("hotels");
   const [rating, setRating] = useState('all')
   const places =  [
-    {},
-    {},
-    {},
+    {name: 'one'},
+    {name: 'two'},
+    {name: 'three'},
+    {name: 'four'},
+    {name: 'five'},
+    {name: 'six'},
+    {name: 'seven'},
+    {name: 'eight'},
+    {name: 'nine'},
+    {name: 'ten'},
   ]
 
   const classes = useStyles();
