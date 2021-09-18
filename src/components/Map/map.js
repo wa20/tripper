@@ -11,11 +11,11 @@ require("dotenv").config();
 
 
 
-  const Map = () => {
-    const isMobile = useMediaQuery('(min-width:600px)');
+  const Map = (setCoords, setBoundary, coords) => {
+    const match = useMediaQuery('(min-width:600px)');
     const classes = useStyles();
 
-    const coords ={lat: 51.4975, lng: 0.1357}
+    // const coords ={lat: 51.4975, lng: 0.1357}
 
   
   
@@ -28,8 +28,13 @@ require("dotenv").config();
           defaultZoom={12}
           margin={[50, 50, 50, 50]}
           options={''}
-          onChange={''}
-          onChildClick={''}
+          onChange={(e) => {
+            console.log(e);
+            setCoords({ lat: e.center.lat, lng: e.center.lng });
+            setBoundary({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
+          }
+        }
+          onChildClick ={''}
         >
           
         </GoogleMapReact>
