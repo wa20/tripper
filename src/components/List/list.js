@@ -13,21 +13,21 @@ import {
 import InfoCard from "../InfoCard/infoCard"
 import useStyles from "./listStyles";
 
-const List = () => {
+const List = ({places}) => {
   const [type, setType] = useState("hotels");
   const [rating, setRating] = useState('all')
-  const places =  [
-    {name: 'one'},
-    {name: 'two'},
-    {name: 'three'},
-    {name: 'four'},
-    {name: 'five'},
-    {name: 'six'},
-    {name: 'seven'},
-    {name: 'eight'},
-    {name: 'nine'},
-    {name: 'ten'},
-  ]
+  // const places =  [
+  //   {name: 'one'},
+  //   {name: 'two'},
+  //   {name: 'three'},
+  //   {name: 'four'},
+  //   {name: 'five'},
+  //   {name: 'six'},
+  //   {name: 'seven'},
+  //   {name: 'eight'},
+  //   {name: 'nine'},
+  //   {name: 'ten'},
+  // ]
 
   const classes = useStyles();
 
