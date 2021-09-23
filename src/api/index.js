@@ -24,7 +24,7 @@ export const getData = async (sw, ne) => {
           "x-rapidapi-key": process.env.REACT_APP_RAPID_API_TRAVEL_API_KEY,
         },
       })
-      console.log('***Return***',data)
+      // console.log('***Return***',data)
     return data
     
 
