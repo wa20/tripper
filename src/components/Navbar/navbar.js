@@ -258,7 +258,7 @@ export default function NavBar(props) {
         <ElevationScroll {...props}>
           <div className={classes.grow}>
             <div className={classes.sectionDesktop}>
-              <AppBar color="white">
+              <AppBar color="default" >
                 <Toolbar>
                   {/* <Image src={Logo} size="small" href="/" /> */}
                   <Button color="inherit" href="/">
@@ -322,7 +322,7 @@ export default function NavBar(props) {
               </AppBar>
             </div>
             <div className={classes.sectionMobile}>
-              <AppBar color="white">
+              <AppBar color="default">
                 <Toolbar>
                   <IconButton
                     onClick={toggleDrawer("left", true)}
