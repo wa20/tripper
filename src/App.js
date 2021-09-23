@@ -1,15 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+// import {
+//   ApolloClient,
+//   InMemoryCache,
+//   ApolloProvider,
+//   createHttpLink,
+// } from '@apollo/client';
+// import { setContext } from '@apollo/client/link/context';
 import 'semantic-ui-css/semantic.min.css'
 import Home from '../src/pages/Home/homePage';
 import Nav from '../src/components/Navbar/navbar'
+
 
 
 
