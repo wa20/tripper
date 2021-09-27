@@ -16,6 +16,7 @@ const [type, setType] = useState('restaurants');
   const [places, setPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState({});
   const [bounds, setBounds] = useState({});
+  const [childClicked, setChildClicked] = useState(null)
 
    
  useEffect(() => {
@@ -39,7 +40,10 @@ const [type, setType] = useState('restaurants');
       {/* <Container style={{paddingTop:"3em", paddingBottom:"3em", margin:"0"}}> */}
       <Grid container style={{ width: "100%",  padding: "2em"  }}>
         <Grid item xs={12} md={4}>
-          <List places={places} />
+          <List 
+          places={places}
+          childClicked={childClicked}
+          />
         </Grid>
         <Grid
           item
@@ -56,6 +60,7 @@ const [type, setType] = useState('restaurants');
             setBounds={setBounds}
             coordinates={coordinates}
             places={places}
+            setChildClicked={setChildClicked}
           />
         </Grid>
       </Grid>
