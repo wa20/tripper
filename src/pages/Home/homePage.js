@@ -55,6 +55,7 @@ const [type, setType] = useState('restaurants');
             setCoordinates={setCoordinates}
             setBounds={setBounds}
             coordinates={coordinates}
+            places={places}
           />
         </Grid>
       </Grid>
