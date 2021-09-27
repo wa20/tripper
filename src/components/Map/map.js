@@ -1,20 +1,20 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { 
-  // Paper, 
-  // Typography, 
+  Paper, 
+  Typography, 
   useMediaQuery } from '@material-ui/core';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
-// import Rating from '@material-ui/lab/Rating';
+import Rating from '@material-ui/lab/Rating';
 // import { makeStyles } from '@material-ui/core/styles';
 import mapStyles from '../../mapStyle'
 import useStyles from './style'
-require("dotenv").config();
+// require("dotenv").config();
 
 
 
 
-  const Maps = ( {setCoordinates, setBounds, coordinates} ) => {
+  const Maps = ( {setCoordinates, setBounds, coordinates, places} ) => {
     const classes = useStyles();
     const isMobile = useMediaQuery('(min-width:600px)');
 
@@ -43,7 +43,36 @@ require("dotenv").config();
         }
           onChildClick ={''}
         >
-          
+          {places?.map((place, index) => (
+            <div
+            className={classes.markerContainer}
+            lat={Number(place.latitude)}
+            lng={Number(place.longtitude)}
+            key={index}
+            >
+              {
+                !isMobile ? (
+                  <LocationOnOutlinedIcon color="secondary" fontSize="large" />
+                ) : (
+                  <Paper elevation={3} className={classes.paper}>
+
+                   
+                    <img className={classes.pointer} 
+                     src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'}
+                    alt={place.name}
+                    /> 
+                    <Typography className={classes.typography} variant="subtitle2" gutterBottom>
+                      {place.name}
+                    </Typography>
+
+                  </Paper>
+                )
+              }
+
+            </div>
+          ))
+
+          }
         </GoogleMapReact>
       </div>
     );
