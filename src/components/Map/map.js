@@ -14,9 +14,10 @@ import useStyles from './style'
 
 
 
-  const Maps = ( {setCoordinates, setBounds, coordinates, places} ) => {
+  const Maps = ( {setCoordinates, setBounds, coordinates, places, setChildClicked} ) => {
     const classes = useStyles();
     const isMobile = useMediaQuery('(min-width:600px)');
+    
 
     // const coordinates ={lat: 51.4975, lng: 0.1357}
 
@@ -41,7 +42,7 @@ import useStyles from './style'
           
           }
         }
-          onChildClick ={''}
+          onChildClick ={(child) => setChildClicked(child)}
         >
           {places?.map((place, index) => (
             <div
