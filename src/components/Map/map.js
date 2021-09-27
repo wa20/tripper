@@ -47,7 +47,7 @@ import useStyles from './style'
             <div
             className={classes.markerContainer}
             lat={Number(place.latitude)}
-            lng={Number(place.longtitude)}
+            lng={Number(place.longitude)}
             key={index}
             >
               {
@@ -64,6 +64,7 @@ import useStyles from './style'
                     <Typography className={classes.typography} variant="subtitle2" gutterBottom>
                       {place.name}
                     </Typography>
+                    <Rating name="read-only" size="small" value={Number(place.rating)} readOnly />
 
                   </Paper>
                 )
