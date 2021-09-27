@@ -14,7 +14,7 @@ import InfoCard from "../InfoCard/infoCard"
 import useStyles from "./listStyles";
 
 const List = ({places}) => {
-  const [type, setType] = useState("hotels");
+  const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState('all')
   // const places =  [
   //   {name: 'one'},
@@ -55,7 +55,7 @@ const List = ({places}) => {
         </Select>
       </FormControl>
 
-      <Grid container spacing={3} className={classes.list}>
+      <Grid container spacing={4} className={classes.list}>
 
       {places?.map((place, i) => (
               <Grid item key={i} item xs={12}>
