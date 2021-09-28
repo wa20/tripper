@@ -12,9 +12,8 @@ import {
 import InfoCard from "../InfoCard/infoCard";
 import useStyles from "./listStyles";
 
-const List = ({ places, childClicked, isLoading }) => {
-  const [type, setType] = useState("restaurants");
-  const [rating, setRating] = useState("all");
+const List = ({ places, childClicked, isLoading, type, setType, ratin, setRating }) => {
+  
   const [elementRef, setElementRef] = useState([]);
 
   console.log({ childClicked });
