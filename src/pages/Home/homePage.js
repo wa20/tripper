@@ -19,6 +19,8 @@ const [type, setType] = useState('restaurants');
   const [childClicked, setChildClicked] = useState(null)
   const [isLoading, setIsLoading] = useState(false);
 
+  const [type, setType] = useState("restaurants");
+  const [rating, setRating] = useState("all");
    
  useEffect(() => {
         navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
@@ -48,6 +50,10 @@ const [type, setType] = useState('restaurants');
           places={places}
           childClicked={childClicked}
           isLoading={isLoading}
+          type={type}
+          setType={setType}
+          rating={rating}
+          setRating={setRating}
           />
         </Grid>
         <Grid
