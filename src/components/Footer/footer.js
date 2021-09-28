@@ -18,7 +18,7 @@ const Footer = () => (
           <Grid.Column width={3}>
             <Header inverted as="h4" content="tripper" />
             <List link inverted>
-              <List.Item href="https://github.com/wa20" as="a"><Icon  name='github'/> GitHub</List.Item>
+              <List.Item href="https://github.com/wa20/tripper" as="a"><Icon  name='github'/> GitHub</List.Item>
               <List.Item disabled href=""  as="a"><Icon name='mail'/> Email</List.Item>
             </List>
           </Grid.Column>
