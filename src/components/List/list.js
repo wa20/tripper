@@ -12,7 +12,7 @@ import {
 import InfoCard from "../InfoCard/infoCard";
 import useStyles from "./listStyles";
 
-const List = ({ places, childClicked, isLoading, type, setType, ratin, setRating }) => {
+const List = ({ places, childClicked, isLoading, type, setType, rating, setRating }) => {
   
   const [elementRef, setElementRef] = useState([]);
 
