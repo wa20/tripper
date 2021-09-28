@@ -26,7 +26,12 @@ const ExpandMore = styled((props) => {
   }));
 
 
-const InfoCard = ({place}) => {
+const InfoCard = ({place, selected, refProp}) => {
+
+  if(selected) refProp?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+
+  const classes = useStyles();
 
     const [expanded, setExpanded] = React.useState(false);
 
@@ -34,7 +39,7 @@ const InfoCard = ({place}) => {
       setExpanded(!expanded);
     };
 
-    const classes = useStyles();
+ 
 
     return (
         <Card elevation={5}>
