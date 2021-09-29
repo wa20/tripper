@@ -27,7 +27,9 @@
     "react-toastify": "^7.0.4",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "emailjs-com": "^3.2.0"
+    
   },
   "scripts": {
     "start": "react-scripts start",
