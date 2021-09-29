@@ -26,7 +26,7 @@ const List = ({ places, childClicked, isLoading, type, setType, rating, setRatin
 
   return (
     <div className={classes.container}>
-      <Typography variant="h5">what the tripper?</Typography>
+      <Typography variant="h5" style={{display:"flex", justifyContent:"center"}}>WHAT THE TRIP!</Typography>
 
       {isLoading ? (
         <div className={classes.loading}>
