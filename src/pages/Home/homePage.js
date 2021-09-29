@@ -1,13 +1,10 @@
-import React, {useState,  useEffect } from "react";
-import { createMedia } from "@artsy/fresnel";
-
-import { CssBaseline, Grid } from "@material-ui/core";
+import React, { useState, useEffect } from "react";
+import {  Grid } from "@material-ui/core";
 import { getData } from "../../api/index";
 import Maps from "../../components/Map/map";
 import List from "../../components/List/list";
 import Footer from "../../components/Footer/footer";
-
-
+import Nav from "../../components/Navbar/navbar";
 
 import { Container, Header, Segment } from "semantic-ui-react";
 
@@ -15,44 +12,54 @@ const Home = () => {
   const [places, setPlaces] = useState([]);
   const [coordinates, setCoordinates] = useState({});
   const [bounds, setBounds] = useState({});
-  const [childClicked, setChildClicked] = useState(null)
+  const [childClicked, setChildClicked] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("all");
-   
- useEffect(() => {
-        navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
-          setCoordinates({ lat: latitude, lng: longitude });
-        });
-      }, []);
-
+  const [filterSearch, setFilterSearch] = useState([]);
 
   useEffect(() => {
-    setIsLoading(true)
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        setCoordinates({ lat: latitude, lng: longitude });
+      }
+    );
+  }, []);
 
-    console.log("coords & bounds", coordinates, bounds);
-    getData(type, bounds.sw, bounds.ne)
-        .then((data) => {
-            console.log("getData", data);
-                setPlaces(data);
-                setIsLoading(false);
-    });
-  }, [type, coordinates, bounds]);
+  useEffect(() => {
+    const filterSearch = places.filter((place) => place.rating > rating);
+
+    setFilterSearch(filterSearch);
+  }, [rating]);
+
+  useEffect(() => {
+    if (bounds.sw && bounds.ne) {
+      setIsLoading(true);
+      console.log("coords & bounds", coordinates, bounds);
+      getData(type, bounds.sw, bounds.ne).then((data) => {
+        console.log("getData", data);
+        setPlaces(data?.filter((place) => place.name && place.num_reviews > 0));
+        setFilterSearch([]);
+        setIsLoading(false);
+      });
+    }
+  }, [type, bounds]);
 
   return (
     <div>
+      <Nav setCoordinates={setCoordinates} />
       {/* <Container style={{paddingTop:"3em", paddingBottom:"3em", margin:"0"}}> */}
-      <Grid container style={{ width: "100%",  padding: "2em"  }}>
+      <Grid container style={{ width: "100%", padding: "2em" }}>
         <Grid item xs={12} md={4}>
-          <List 
-          places={places}
-          childClicked={childClicked}
-          isLoading={isLoading}
-          type={type}
-          setType={setType}
-          rating={rating}
-          setRating={setRating}
+          <List
+            places={filterSearch.length ? filterSearch : places}
+            childClicked={childClicked}
+            isLoading={isLoading}
+            type={type}
+            setType={setType}
+            rating={rating}
+            setRating={setRating}
           />
         </Grid>
         <Grid
@@ -69,7 +76,7 @@ const Home = () => {
             setCoordinates={setCoordinates}
             setBounds={setBounds}
             coordinates={coordinates}
-            places={places}
+            places={filterSearch.length ? filterSearch : places}
             setChildClicked={setChildClicked}
           />
         </Grid>
