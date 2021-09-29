@@ -44,9 +44,9 @@ Ensure all dependencies and dev dependencies are installed if you encounter erro
 
 As this app uses API's you will need to generate the following API KEYs:
 
-REACT_APP_GOOGLE_MAPS_API_KEY=
-REACT_APP_RAPID_API_TRAVEL_API_KEY=
-REACT_APP_RAPID_API_HOST=
+* REACT_APP_GOOGLE_MAPS_API_KEY=
+* REACT_APP_RAPID_API_TRAVEL_API_KEY=
+* REACT_APP_RAPID_API_HOST=
 
 API
 [RAPID API](https://rapidapi.com/hub?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=DevRel&utm_campaign=DevRel)
@@ -61,9 +61,9 @@ API
 [Email.js](https://www.emailjs.com/)
 * For the contact feature to work you will need to create a free email js account and link your email. Once done obtain the relevant API for the below section on your .env file.
 
-REACT_APP_SERVICE_ID=
-REACT_APP_TEMPLATE_ID=
-REACT_APP_USER_ID=
+* REACT_APP_SERVICE_ID=
+* REACT_APP_TEMPLATE_ID=
+* REACT_APP_USER_ID=
 
 
 Once all the relevant API Keys are obtained add them to your .env file. Once done if you have already started the app you will need to run `npm run build` and then `npm run start`.
