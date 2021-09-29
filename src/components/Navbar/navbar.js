@@ -261,7 +261,7 @@ export default function NavBar({ props, setCoordinates }) {
                   >
                     <InputBase
                       sx={{ ml: 1, flex: 1 }}
-                      sx={{ p: "8px" }}
+                      // sx={{ p: "8px" }}
                       placeholder="Search Google Maps"
                       inputProps={{ "aria-label": "search google maps" }}
                     />
