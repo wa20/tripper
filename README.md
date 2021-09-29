@@ -1,70 +1,88 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-## Available Scripts
+# tripper.
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+A Travel advisor app built uising React and API's from Google MAPS and RAPID API `Travel Advisor` API. The App
+has geolocation allowing it to auto locate the user's location. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Users are able to search locations using the search function, and are able to filter results by type `Hotels, Restaurants, Attractions` and/or by Rating.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+There is also an additional contact feature that if set up through `EmailJS` will enable user to send messages directly to you through the app.
 
-### `npm test`
+The app uses Material Ui, Semantic Ui along with CSS to create the user interface.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Future development: Add weather feature using weather API that auto updates based on location.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Screenshots
+![Desktop](src/assets/tripperDesktop.png)
+![Mobile](src/assets/tripperMobile.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ## Contents Table
+  - [Installation](#Installation)
+  - [Usage](#|Usage)
+  - [Collaborators](#Collaborators)
+  - [License](#License)
+  - [Author](#Author)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Installation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To install the app, clone the repo from GitHub, open in VS Code and open the terminal:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* step 1 `npm install`
+* step 2 `npm run build`
+* step 3 `npm run start`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Ensure all dependencies and dev dependencies are installed if you encounter errors (npm install {package}).
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+As this app uses API's you will need to generate the following API KEYs:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+REACT_APP_GOOGLE_MAPS_API_KEY=
+REACT_APP_RAPID_API_TRAVEL_API_KEY=
+REACT_APP_RAPID_API_HOST=
 
-### Code Splitting
+API
+[RAPID API](https://rapidapi.com/hub?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=DevRel&utm_campaign=DevRel)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[Travel Adviser API](https://rapidapi.com/apidojo/api/travel-advisor?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=DevRel&utm_campaign=DevRel)
+* Once an account is created, subscribe to the above API, once subscribed ensure to group the relevant API KEY.
 
-### Analyzing the Bundle Size
+[Google Maps](https://console.cloud.google.com/home/dashboard)
+* You will need to create a new project and search for MAps JavaScript API, once enabled obtain the API KEY. You will also need to search for Places API and click enable this will allow the search function to work.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+[Email.js](https://www.emailjs.com/)
+* For the contact feature to work you will need to create a free email js account and link your email. Once done obtain the relevant API for the below section on your .env file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+REACT_APP_SERVICE_ID=
+REACT_APP_TEMPLATE_ID=
+REACT_APP_USER_ID=
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Once all the relevant API Keys are obtained add them to your .env file. Once done if you have already started the app you will need to run `npm run build` and then `npm run start`.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Collaborators
+none
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+- ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
+- [title](https://opensource.org/licenses/MIT)
+- [title](https://opensource.org/licenses/MIT)
+
+## Author
+- Wael Ahmed
+- Find heroku app deployment on: https://app-tripper.herokuapp.com/
+
+
+
+
+

@@ -19,7 +19,7 @@ const Footer = () => (
             <Header inverted as="h4" content="tripper" />
             <List link inverted>
               <List.Item href="https://github.com/wa20/tripper" as="a"><Icon  name='github'/> GitHub</List.Item>
-              <List.Item disabled href=""  as="a"><Icon name='mail'/> Email</List.Item>
+              <List.Item href="/contact"  as="a"><Icon name='mail'/> Contact Us</List.Item>
             </List>
           </Grid.Column>
 
@@ -28,7 +28,7 @@ const Footer = () => (
               About
             </Header>
             <p>
-              Blurp, something something something, tripper is amazing.
+              tripper, in a new town and stuck for ideas, we got you covered! Find Hotels, Restaurants and Attractions near and far!
             </p>
           </Grid.Column>
         </Grid.Row>
