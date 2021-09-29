@@ -1,52 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-// import {
-//   ApolloClient,
-//   InMemoryCache,
-//   ApolloProvider,
-//   createHttpLink,
-// } from '@apollo/client';
-// import { setContext } from '@apollo/client/link/context';
-import 'semantic-ui-css/semantic.min.css'
-import Home from '../src/pages/Home/homePage';
-import Nav from '../src/components/Navbar/navbar'
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 
-
-
-
-
-// const authLink = setContext((_, { headers }) => {
-//   const token = localStorage.getItem('id_token');
-//   return {
-//     headers: {
-//       ...headers,
-//       authorization: token ? `Bearer ${token}` : '',
-//     },
-//   };
-// });
-
-// const client = new ApolloClient({
-//   link: authLink.concat(httpLink),
-//   cache: new InMemoryCache(),
-// });
+import "semantic-ui-css/semantic.min.css";
+import Home from "../src/pages/Home/homePage";
+import Contact from "../src/pages/Contact/contact";
 
 function App() {
   return (
-    // <ApolloProvider client={client}>
-
-    
-      <Router>
-        <Nav />
-        <div>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home">
-              <Redirect to="/"></Redirect>
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    // </ApolloProvider>
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/home">
+            <Redirect to="/"></Redirect>
+          </Route>
+          <Route exact path="/contact" component={Contact} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
