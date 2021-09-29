@@ -48,7 +48,8 @@ As this app uses API's you will need to generate the following API KEYs:
 * REACT_APP_RAPID_API_TRAVEL_API_KEY=
 * REACT_APP_RAPID_API_HOST=
 
-API
+*API
+
 [RAPID API](https://rapidapi.com/hub?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=DevRel&utm_campaign=DevRel)
 
 [Travel Adviser API](https://rapidapi.com/apidojo/api/travel-advisor?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=DevRel&utm_campaign=DevRel)
