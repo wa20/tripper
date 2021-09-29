@@ -14,7 +14,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import HomeIcon from "@material-ui/icons/Home";
 import clsx from "clsx";
-import EmailIcon from '@mui/icons-material/Email';
+import EmailIcon from "@mui/icons-material/Email";
 import { Image } from "semantic-ui-react";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
@@ -87,8 +87,6 @@ function ElevationScroll(props) {
   });
 }
 
-
-
 function ListItemLink(props) {
   return <ListItem button component="a" {...props} />;
 }
@@ -101,6 +99,7 @@ export default function NavBar({ props, setCoordinates }) {
   const onPlaceChanged = () => {
     const lat = autocomplete.getPlace().geometry.location.lat();
     const lng = autocomplete.getPlace().geometry.location.lng();
+
     setCoordinates({ lat, lng });
   };
 
@@ -195,7 +194,8 @@ export default function NavBar({ props, setCoordinates }) {
                   <Paper
                     component="form"
                     sx={{
-                      // p: "2px 4px",
+                      p: "6px 4px",
+                      // height: '45px', m: 1.5,
                       display: "flex",
                       alignItems: "center",
                       width: 500,
@@ -203,27 +203,29 @@ export default function NavBar({ props, setCoordinates }) {
                   >
                     <InputBase
                       sx={{ ml: 1, flex: 1 }}
+                      // sx={{ p: "7px 8px" }}
                       placeholder="Search Google Maps"
                       inputProps={{ "aria-label": "search google maps" }}
                     />
-                    <Divider
+                    {/* <Divider
                       sx={{ height: 28, m: 0.5 }}
                       orientation="vertical"
                     />
-                    <IconButton
+                     */}
+                    {/* <IconButton
                       type="submit"
                       sx={{ p: "10px" }}
                       aria-label="search"
                     >
                       <SearchIcon />
-                    </IconButton>
+                    </IconButton> */}
                   </Paper>
                 </Autocomplete>
               </Toolbar>
             </AppBar>
           </div>
           <div className={classes.sectionMobile}>
-            <AppBar color="default" color="default" style={{ zIndex: "1" }}>
+            <AppBar color="default" style={{ zIndex: "1", padding: "0.5em 0em"  }}>
               <Toolbar>
                 <IconButton
                   onClick={toggleDrawer("left", true)}
@@ -251,7 +253,7 @@ export default function NavBar({ props, setCoordinates }) {
                   <Paper
                     component="form"
                     sx={{
-                      // p: "2px 4px",
+                      p: "2px 4px",
                       display: "flex",
                       alignItems: "center",
                       width: 320,
@@ -259,10 +261,11 @@ export default function NavBar({ props, setCoordinates }) {
                   >
                     <InputBase
                       sx={{ ml: 1, flex: 1 }}
+                      sx={{ p: "8px" }}
                       placeholder="Search Google Maps"
                       inputProps={{ "aria-label": "search google maps" }}
                     />
-                    <Divider
+                    {/* <Divider
                       sx={{ height: 28, m: 0.5 }}
                       orientation="vertical"
                     />
@@ -271,7 +274,7 @@ export default function NavBar({ props, setCoordinates }) {
                       aria-label="search"
                     >
                       <SearchIcon />
-                    </IconButton>
+                    </IconButton> */}
                   </Paper>
                 </Autocomplete>
               </Toolbar>
