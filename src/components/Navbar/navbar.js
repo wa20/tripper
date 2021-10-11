@@ -256,7 +256,7 @@ export default function NavBar({ props, setCoordinates }) {
                       p: "2px 4px",
                       display: "flex",
                       alignItems: "center",
-                      width: 320,
+                      width: 280,
                     }}
                   >
                     <InputBase
